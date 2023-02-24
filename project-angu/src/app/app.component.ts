@@ -8,18 +8,20 @@ import { FormGroup,FormBuilder,Validators } from "@angular/forms";
 })
 export class AppComponent {
   createForm!: FormGroup;
+  constructor(private fb: FormBuilder) {
+    
+  }
 
   data: any[] =[{
     imageUrl: '../../asse'
   }
   ]
-}
-
-intiForm() {
-  this.createFrom = this.fb.group({
-    txtCategory: ['', [Validators.required]],
-    txtSummary: [''],
-    txtDescription: [''],
-    txtPrice: [null, [Validators.required]],
-  });
+  intiForm() {
+    this.createForm = this.fb.group({
+      txtCategory: ['', [Validators.required]],
+      txtSummary: [''],
+      txtDescription: [''],
+      txtPrice: [null, [Validators.required]],
+    });
+  }
 }
