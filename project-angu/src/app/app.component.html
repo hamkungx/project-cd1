@@ -1,0 +1,58 @@
+<div class="grid p-5">
+  <div class="col-5 text-6xl">Item Product</div>
+  <div class="col-5"></div>
+  <div class="col-2">
+    <button pButton type="button" label="Create"></button>
+    <button
+      pButton
+      type="button"
+      label="Delete"
+      class="p-button-danger"
+    ></button>
+  </div>
+</div>
+<div class="grid">
+  <div class="col-1"></div>
+  <div class="col-10">
+    <div class="card">
+      <form [formGroup]="this.CreateForm">
+      <div class="formgrid grid">
+        <div class="field col-12 md:col-6">
+          <label for="firstname6">Catalog</label>
+          <input
+            id="firstname6"
+            type="text"
+            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+          />
+        </div>
+        <div class="field col-12 md:col-6">
+          <label for="lastname6">Summary</label>
+          <input
+            id="lastname6"
+            type="text"
+            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+          />
+        </div>
+        <div class="field col-12 md:col-6">
+          <label for="firstname6">Price</label>
+          <input
+            id="firstname6"
+            type="text"
+            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+          />
+        </div>
+        <div class="field col-12">
+          <label for="address">Description</label>
+          <textarea
+            id="address"
+            type="text"
+            rows="4"
+            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+          ></textarea>
+        </div>
+      </div>
+    </form>
+    </div>
+  </div>
+  <div class="col-1"></div>
+</div>
