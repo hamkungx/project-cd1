@@ -8,7 +8,7 @@ import { ICatalogModel } from '../models/modelCatalogApi';
   providedIn: 'root',
 })
 export class CatalogService {
-  BASE_URL = 'ttp://167.172.79.2:7001/api/v1/catalog';
+  BASE_URL = 'http://167.172.79.2:7001/api/v1/catalog';
 
   constructor(private http: HttpClient) {}
 

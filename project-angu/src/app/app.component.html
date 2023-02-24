@@ -2,26 +2,28 @@
   <div class="col-5 text-6xl">Item Product</div>
   <div class="col-5"></div>
   <div class="col-2">
-    <button pButton type="button" label="Create"></button>
-    <button
-      pButton
-      type="button"
-      label="Delete"
-      class="p-button-danger"
-    ></button>
   </div>
 </div>
 <div class="grid">
   <div class="col-1"></div>
   <div class="col-10">
     <div class="card">
-      <form [formGroup]="this.createForm">
+      <form [formGroup]="this.createForm" >
+        <button pButton (click)="submit()" type="button" label="Create"></button>
+        <button
+          pButton
+          type="button"
+          label="Delete"
+          class="p-button-danger"
+        ></button>
       <div class="formgrid grid">
         <div class="field col-12 md:col-6">
           <label for="firstname6">Catalog</label>
           <input
+            pInputText
             id="txtCategory"
             type="text"
+            formControlName="txtCategory"
             class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
           />
         </div>
@@ -30,6 +32,7 @@
           <input
             id="txtSummary"
             type="text"
+            formControlName="txtSummary"
             class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
           />
         </div>
@@ -38,14 +41,16 @@
           <input
             id="txtPrice"
             type="text"
-            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+            formControlName="txtPrice"
+            
           />
         </div>
         <div class="field col-12">
           <label for="address">Description</label>
           <textarea
-            id="xtDescription"
+            id="txtDescription"
             type="text"
+            formControlName="txtDescription"
             rows="4"
             class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
           ></textarea>
@@ -56,3 +61,21 @@
   </div>
   <div class="col-1"></div>
 </div>
+<p-table [tableStyle]="{'min-width': '50rem'}">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Price</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-product>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </ng-template>
+</p-table>

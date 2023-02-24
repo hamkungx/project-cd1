@@ -6,6 +6,9 @@ import {MenuItem} from 'primeng/api';                  //api
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { PrimeNGConfig } from 'primeng/api';
 import {ButtonModule} from 'primeng/button';
+import {TableModule} from 'primeng/table';
+import {InputTextModule} from 'primeng/inputtext';
+
 
 
 
@@ -26,6 +29,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ButtonModule,
     FormsModule,
     ReactiveFormsModule,
+    TableModule,
+    InputTextModule
     
   ],
   providers: [],
