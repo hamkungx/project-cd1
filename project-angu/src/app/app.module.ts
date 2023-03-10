@@ -8,6 +8,8 @@ import { PrimeNGConfig } from 'primeng/api';
 import {ButtonModule} from 'primeng/button';
 import {TableModule} from 'primeng/table';
 import {InputTextModule} from 'primeng/inputtext';
+import {PaginatorModule} from 'primeng/paginator';
+
 
 
 
@@ -16,6 +18,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PanelLapComponent } from './panel-lap/panel-lap.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +33,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     TableModule,
-    InputTextModule
+    InputTextModule,
+    PaginatorModule,
+    HttpClientModule
     
   ],
   providers: [],

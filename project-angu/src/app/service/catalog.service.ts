@@ -33,6 +33,14 @@ export class CatalogService {
     const url = `${this.BASE_URL}/GetProducts`;
     return this.http.get<ICatalogModel[]>(url);
   }
+  GetProductByPage(page:number,pageSize:number){
+    const url = `${this.BASE_URL}/GetProductByPage`;
+    return this.http.post(url,{
+        "page": page,
+        "pageSize": pageSize
+      
+    })
+  }
 
 }
 

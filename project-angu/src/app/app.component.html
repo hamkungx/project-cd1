@@ -1,81 +1,68 @@
-<div class="grid p-5">
-  <div class="col-5 text-6xl">Item Product</div>
-  <div class="col-5"></div>
-  <div class="col-2">
+<div class="card">
+  <div class="card-container green-container">
+      <div class="block bg-green-500 font-bold text-center p-4 border-round mb-3">
+        <div class="card">
+          <form [formGroup]="this.createForm" >
+          <h1 class="text-left">ITem</h1>
+          <div class="formgrid grid">
+              <div class="field col">
+                  <h2 class="text-left">Catalog</h2>
+                  <input pInputText id="txtCategory" formControlName="txtCategory" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid border-round appearance-none outline-none focus:border-primary w-full">
+              </div>
+              <div class="field col">
+                  <h2 class="text-left">Summary</h2>
+                  <input pInputText id="txtSummary" formControlName="txtSummary" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solidnborder-round appearance-none outline-none focus:border-primary w-full">
+              </div>
+              <div class="field col">
+                  <h2 class="text-left">Price</h2>
+                  <input pInputText id="txtPrice" formControlName="txtPrice" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid border-round appearance-none outline-none focus:border-primary w-full">
+              </div>
+              <div class="field col-12">
+                  <h2 class="text-left">Description</h2>
+                  <textarea pInputText id="txtDescription" formControlName="txtDescription" type="text" rows="4" class="text-base text-color surface-overlay p-2 border-1 border-solid border-round appearance-none outline-none focus:border-primary w-full"></textarea>
+              </div>
+              <span class="p-buttonset">
+                <button pButton (click)="submit()" label="Save" icon="pi pi-check"></button>
+                <button pButton  label="Delete" icon="pi pi-trash" class="p-button-danger"></button>
+              </span>
+          </div>
+          </form>
+      </div>
+      </div>
   </div>
 </div>
-<div class="grid">
-  <div class="col-1"></div>
-  <div class="col-10">
-    <div class="card">
-      <form [formGroup]="this.createForm" >
-        <button pButton (click)="submit()" type="button" label="Create"></button>
-        <button
-          pButton
-          type="button"
-          label="Delete"
-          class="p-button-danger"
-        ></button>
-      <div class="formgrid grid">
-        <div class="field col-12 md:col-6">
-          <label for="firstname6">Catalog</label>
-          <input
-            pInputText
-            id="txtCategory"
-            type="text"
-            formControlName="txtCategory"
-            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-          />
-        </div>
-        <div class="field col-12 md:col-6">
-          <label for="lastname6">Summary</label>
-          <input
-            id="txtSummary"
-            type="text"
-            formControlName="txtSummary"
-            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-          />
-        </div>
-        <div class="field col-12 md:col-6">
-          <label for="firstname6">Price</label>
-          <input
-            id="txtPrice"
-            type="text"
-            formControlName="txtPrice"
-            
-          />
-        </div>
-        <div class="field col-12">
-          <label for="address">Description</label>
-          <textarea
-            id="txtDescription"
-            type="text"
-            formControlName="txtDescription"
-            rows="4"
-            class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-          ></textarea>
+
+<div class="card">
+  <div class="card-container green-container">
+      <div class="block bg-green-500 font-bold text-center p-4 border-round mb-3">
+        <div class="card">
+          <h1 class="text-left">ITem</h1>
+      
+            <p-table 
+            [value]="this.datacaoalogs"
+            [paginator]="true"
+            [showCurrentPageReport]="true"
+            [rows]="5"
+            currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [rowsPerPageOptions]="[5,10,15]"
+            >
+              <ng-template pTemplate="header">
+                  <tr>
+                      <th>ID</th>
+                      <th>Name</th>
+                      <th>Catalog</th>
+                      <th>Price</th>
+                  </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-item let-rowIndex="rowIndex">
+                  <tr>
+                      <td>{{rowIndex+1}}</td>
+                      <td>{{item.name}}</td>
+                      <td>{{item.category}}</td>
+                      <td>{{item.price}}</td>
+                  </tr>
+              </ng-template>
+            </p-table>
         </div>
       </div>
-    </form>
-    </div>
   </div>
-  <div class="col-1"></div>
 </div>
-<p-table [tableStyle]="{'min-width': '50rem'}">
-    <ng-template pTemplate="header">
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Price</th>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-product>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </ng-template>
-</p-table>
